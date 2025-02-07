@@ -1,0 +1,29 @@
+{% load static %}
+<section class="slider_section mb-63">
+    <div class="slider_area slick_slider_activation" data-slick='{
+        "slidesToShow": 1,
+        "slidesToScroll": 1,
+        "arrows": true,
+        "dots": true,
+        "autoplay": false,
+        "speed": 300,
+        "infinite": true
+    }'>
+        {% for Slide in Slides %}
+        <div class="single_slider d-flex align-items-center" data-bgimg="{% static Slide.slideImage %}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7">
+                        <div class="slider_text">
+                            <span>{{Slide.slideName}}</span>
+                            <h1>{{Slide.slideDescription|safe}}</h1>
+                            <p>{{Slide.smallslideDescription|safe}}<br> to wear their Norda</p>
+                            <a class="btn btn-primary" href="{% url 'Product' %}">Explore Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

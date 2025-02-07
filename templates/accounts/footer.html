@@ -1,0 +1,51 @@
+{% load static %}
+<footer class="footer_widgets">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-5">
+                <div class="footer_widget_list">
+                    {% for Footer in Footers %}
+                    <div class="footer_logo">
+                        <a href="#"><img src="{% static Footer.logo %}" alt=""></a>
+                    </div>
+                    <div class="footer_contact">
+                        <div class="footer_contact_list">
+                            <span>{{Footer.SpanLocation}}</span>
+                            <p>{{Footer.Location}}</p>
+                        </div>
+                        <div class="footer_contact_list">
+                            <span>{{Footer.SpanContact}}</span>
+                            <a href="tel:(+99)0521282399">{{Footer.Contact}}</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-7">
+                <div class="footer_widget_list text-right">
+                    <div class="footer_menu">
+                        <ul class="d-flex justify-content-end">
+                            {% for TopMenu in TopMenus %}
+                            <li><a href="http://127.0.0.1:8000/{{TopMenu.topMenuName}}">{{TopMenu.topMenuName}}</a></li>
+                            {% endfor %} 
+                        </ul>
+                    </div>
+                    <div class="footer_social">
+                        {% for SocialMedia in SocialMedias %}
+                        <ul class="d-flex justify-content-end " style="float: right; padding:0px 5px;">
+                            <li><a href="#" data-tippy="{{SocialMedia.socialMediaName}}" data-tippy-inertia="true"
+                                    data-tippy-delay="50" data-tippy-arrow="true" data-tippy-placement="top">
+                                    <i class="{{ SocialMedia.socialMediaURL }}"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        {% endfor %}   
+                    </div>
+                    <div class="copyright_right">
+                        <p>©2021 <span>Uthr</span>. made with <i class="ion-heart"></i>  by <a href="https://hasthemes.com" target="_blank">HasThemes</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

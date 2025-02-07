@@ -1,0 +1,30 @@
+{% load static %}
+<section class="banner_section mb-109">
+    <div class="container">
+        <div class="section_title mb-60">
+            <h2>featured collections</h2>
+        </div>
+        <div class="banner_container d-flex">
+            {% for Banner in Banners%}
+            <figure class="single_banner position-relative mr-30">
+               
+                <img src="{% static Banner.img1 %}" alt="" style="width: 700px; height: 450px;">
+                <figcaption class="banner_text position-absolute">
+                    <h3>{{Banner.text1}}</h3>
+                    <p>{{Banner.span1}}</p>
+                    <a class="btn btn-primary" href="{% url 'Product' %}" >Shop Now</a>
+                </figcaption>
+                
+            </figure>
+           
+            <figure class="single_banner position-relative">
+                <img src="{% static Banner.img2 %}" alt="" style="width: 500px; height: 450px;">
+                <figcaption class="banner_text position-absolute">
+                    <h3 class="text-white" style="color: #000;">{{Banner.text2}}</h3>
+                    <p class="text-white">{{Banner.span2}}</p>
+                </figcaption>
+            </figure>
+            {% endfor %}
+        </div>
+    </div>
+</section>

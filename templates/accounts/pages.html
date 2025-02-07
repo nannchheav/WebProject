@@ -1,0 +1,38 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    {% include 'accounts/head.html' %}
+
+</head>
+
+<body>
+
+    <!--offcanvas menu area start-->
+    {% include 'accounts/offcanvas.html' %}
+    <!--offcanvas menu area end-->
+
+    <!--mini cart-->
+    {% include 'accounts/miniCart.html' %}
+    <!--mini cart end-->
+
+    <!--header area start-->
+    {% include 'accounts/PageHeader.html' %}
+    <!--header cart end-->
+
+    {% block content %}
+
+    {%  endblock %}
+
+    <!--footer area start-->
+    {% include 'accounts/footer.html' %}
+    <!--footer area end-->
+
+<!-- JS============================================ -->
+
+{% include 'accounts/JsPlugin.html' %}
+
+</body>
+
+</html>

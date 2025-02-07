@@ -1,0 +1,40 @@
+{% load static %}
+<section class="banner_section banner_style2 mb-109">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                {% for Banner in Banners%}
+
+                <figure class="single_banner position-relative">
+                    <img src="{% static Banner.img3%}" alt="" style="height: 450px; width: 600px;">
+                    <div class="banner_text position-absolute">
+                        <h3>{{ Banner.text1}}</h3>
+                        <p>{{ Banner.span1}}</p>
+                        <a class="btn btn-primary" href="{% url 'Product' %}">Shop Now</a>
+                    </div>
+                    <div class="banner_tag">
+                        <span>new arrivals <br> women</span>
+                    </div>
+                </figure>
+                {% endfor %}
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                {% for Banner in Banners%}
+
+                <figure class="single_banner position-relative">
+                    <img src="{% static Banner.img4 %}" alt="" style="height: 450px; width: 600px;">
+                    <div class="banner_text position-absolute text__style2">
+                        <h3><span>50%</span>{{ Banner.text2}}</h3>
+                        <p>{{ Banner.span2}}</p>
+                        <a class="btn btn-primary" href="{% url 'Product' %}">Shop Now</a>
+                    </div>
+                    <div class="banner_tag">
+                        <span>mega sale</span>
+                    </div>
+                </figure>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</section>
